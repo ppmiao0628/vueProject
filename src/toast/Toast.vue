@@ -1,6 +1,6 @@
 <template>
-  <div class="wrap" v-show="show">
-    在下是弹窗
+  <div class="wrap" v-if="showWrap" :class="showContent?'fadein':'fadeout'">
+    {{text}}
   </div>
 </template>
 
@@ -32,5 +32,32 @@ export default {
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     color: #fff;
+  }
+  .fadein {
+    -webkit-animation: animate_in 0.25s;
+    -o-animation: animate_in 0.25s;
+    animation: animate_in 0.25s;
+  }
+  .fadeout {
+    -webkit-animation: animate_out 0.25s;
+    -o-animation: animate_out 0.25s;
+    animation: animate_out 0.25s;
+    opacity: 0;
+  }
+  @keyframes animate_in {
+    0% {
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  @keyframes animate_out {
+    0% {
+      opacity: 1;
+    }
+    100%{
+      opacity: 0;
+    }
   }
 </style>

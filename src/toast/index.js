@@ -9,13 +9,17 @@ function showToast (text, duration = 2000) {
     data () {
       return {
         text: text,
-        show: true
+        showWrap: true,
+        showContent: true
       }
     }
   })
   document.body.appendChild(toastDom.$el)
   setTimeout(() => {
-    toastDom.show = false
+    toastDom.showWrap = false
+  }, duration - 1250)
+  setTimeout(() => {
+    toastDom.showContent = false
   }, duration)
 }
 function registryToast () {
