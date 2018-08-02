@@ -9,7 +9,7 @@ function showToast (text, duration = 2000) {
     data () {
       return {
         text: text,
-        show: false
+        show: true
       }
     }
   })

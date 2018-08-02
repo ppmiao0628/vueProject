@@ -1,5 +1,5 @@
 <template>
-  <div class="wrap">
+  <div class="wrap" v-show="show">
     在下是弹窗
   </div>
 </template>
